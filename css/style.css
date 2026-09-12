@@ -1,0 +1,431 @@
+* {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: #0d0d0d;
+    color: white;
+}
+
+.training-photo {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.training-photo img {
+    width: 80%;
+    max-width: 900px;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #111111;
+    padding: 20px 60px;
+}
+
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: red;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+}
+
+.nav-links a:hover {
+    color: red;
+}
+
+.join-button {
+    background-color: red;
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+}
+
+.join-button:hover {
+    background-color: maroon;
+}
+
+.page-icon {
+    width: 4vw;
+    min-width: 48px;
+    max-width: 72px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.hero {
+    background-color: #111111;
+    background-image: url("https://images.openai.com/static-rsc-4/xAyp-c-PvvC7VIUuWfLx2ZDtyXitfDUcYh40lJ3Ck097ipovLyYVKhcjzsAdSE4UtyMgZyXlkleSUN7bEogHyeHckmY2ZN6_X37AXpKxuerrRUgFR7iPkWcRkkeHWpY9gfBBVq5dtd-f_5f_BOIj-KvpiHatU4rMbz7EnE4LS6m26v37C53b0Jh_N9vJ0U2x?purpose=fullsize");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 60vh;
+    padding: 20px 60px;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.hero-text a {
+    display: inline-block;
+    background-color: red;
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+}
+
+.hero-text a:hover {
+    background-color: maroon;
+    color: white;
+}
+
+.hero-text h1 {
+    font-size: 70px;
+    font-weight: bold;
+}
+
+#main-title {
+    letter-spacing: 0.05rem;
+}
+
+.hero-text h1 span {
+    color: red;
+}
+
+.hr-dr {
+    width: 45%;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.hero-label {
+    display: flex;
+    align-items: center;
+}
+
+.red-line {
+    width: 40px;
+    height: 3px;
+    background-color: red;
+    margin-right: 12px;
+}
+
+.why-us {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    color: black;
+    padding: 60px 70px;
+}
+
+.why-text {
+    width: 45%;
+}
+
+.why-text h2 {
+    font-size: 50px;
+    margin-bottom: 35px;
+}
+
+.why-text h2 span {
+    color: red;
+}
+
+.why-text p,
+.benefits {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.benefits li {
+    margin-bottom: 8px;
+}
+
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 50%;
+    gap: 20px;
+}
+
+.feature-card {
+    width: 45%;
+    background-color: #f2f2f2;
+    border-radius: 15px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+footer {
+    background-color: #111111;
+    color: white;
+    padding: 30px 60px;
+}
+
+.about-hero {
+    background-color: #111111;
+    color: white;
+    padding: 70px 60px;
+}
+
+.about-label,
+.team-label,
+.label {
+    color: red;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.about-hero h1,
+.training h1,
+.join h1 {
+    font-size: 55px;
+    margin: 20px 0;
+}
+
+.about-hero h1 span,
+.training h1 span,
+.join h1 span {
+    color: red;
+}
+
+.about-description,
+.description {
+    width: 55%;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.about-info {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    color: black;
+    padding: 60px;
+}
+
+.about-text,
+.about-goals {
+    width: 45%;
+}
+
+.about-text h2,
+.about-goals h2 {
+    font-size: 32px;
+}
+
+.about-text p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.about-goals li {
+    margin-bottom: 12px;
+    font-size: 18px;
+}
+
+.team-section {
+    background-color: #f2f2f2;
+    color: black;
+    padding: 60px;
+}
+
+.team-section h2 {
+    font-size: 40px;
+}
+
+.team-members {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.team-card {
+    width: 45%;
+    background-color: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
+.team-card img {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.team-card h3 {
+    font-size: 24px;
+}
+
+.team-card p {
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+.training,
+.join {
+    background-color: #111111;
+    color: white;
+    padding: 70px 60px;
+}
+
+.program {
+    background-color: white;
+    color: black;
+    padding: 60px;
+}
+
+.program h2,
+.schedule h2,
+.form-section h2 {
+    font-size: 40px;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 35px;
+}
+
+.card {
+    width: 27%;
+    background-color: #f2f2f2;
+    padding: 25px;
+    border-radius: 15px;
+}
+
+.card h3 {
+    font-size: 23px;
+}
+
+.card p {
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+.schedule {
+    background-color: #f2f2f2;
+    color: black;
+    padding: 60px;
+}
+
+.schedule p {
+    font-size: 18px;
+}
+
+table {
+    width: 100%;
+    margin-top: 30px;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: #111111;
+    color: white;
+    padding: 15px;
+    text-align: left;
+}
+
+td {
+    background-color: white;
+    padding: 15px;
+    border-bottom: 1px solid #cccccc;
+}
+
+.form-section {
+    background-color: white;
+    color: black;
+    padding: 60px;
+}
+
+.form-section h2 {
+    margin-bottom: 30px;
+}
+
+form {
+    width: 50%;
+}
+
+form label {
+    display: block;
+    font-size: 17px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+
+form input,
+form select,
+form textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#experience {
+    background-color: white;
+}
+
+form textarea {
+    resize: vertical;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    border: 1px solid red;
+    outline: none;
+}
+
+form button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 13px 30px;
+    margin-top: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: darkred;
+}
+
+.join-photo {
+    text-align: center;
+    background-color: #111111;
+    padding: 40px 20px;
+}
+
+.join-photo img {
+    width: 80%;
+    max-width: 900px;
+    height: auto;
+    border-radius: 12px;
+}
