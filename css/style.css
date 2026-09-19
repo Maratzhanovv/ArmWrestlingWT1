@@ -1,6 +1,9 @@
 * {
     font-family: "Trebuchet MS", Arial, sans-serif;
 }
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     margin: 0;
@@ -42,7 +45,7 @@ body {
 .nav-links a {
     color: white;
     text-decoration: none;
-    margin: 0 20px;
+    margin: 0 20px  ;
 }
 
 .nav-links a:hover {
@@ -184,7 +187,7 @@ footer {
 .about-hero {
     background-color: #111111;
     color: white;
-    padding: 70px 60px;
+    padding: 45px 60px;
 }
 
 .about-label,
@@ -198,8 +201,8 @@ footer {
 .about-hero h1,
 .training h1,
 .join h1 {
-    font-size: 55px;
-    margin: 20px 0;
+    font-size: 50px;
+    margin: 15px 0;
 }
 
 .about-hero h1 span,
@@ -287,7 +290,7 @@ footer {
 .join {
     background-color: #111111;
     color: white;
-    padding: 70px 60px;
+    padding: 40px 60px 50px;
 }
 
 .program {
@@ -417,15 +420,160 @@ form button:hover {
     background-color: darkred;
 }
 
-.join-photo {
-    text-align: center;
-    background-color: #111111;
-    padding: 40px 20px;
+.cards,
+.features,
+.team-members {
+    display: flex;
+    gap: 25px;
+    align-items: stretch;
 }
 
-.join-photo img {
-    width: 80%;
-    max-width: 900px;
-    height: auto;
-    border-radius: 12px;
+.card,
+.feature-card,
+.team-card {
+    flex: 1;
+    box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover,
+.feature-card:hover,
+.team-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.card-button {
+    display: inline-block;
+    background-color: red;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+.card-button:hover {
+    background-color: maroon;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+    gap: 20px;
+    padding: 60px;
+    background-color: white;
+}
+
+.grid-header {
+    grid-area: header;
+    background-color: #111111;
+    color: white;
+    padding: 25px;
+}
+
+.grid-sidebar {
+    grid-area: sidebar;
+    background-color: #f2f2f2;
+    color: black;
+    padding: 25px;
+}
+
+.grid-main {
+    grid-area: main;
+    background-color: #f2f2f2;
+    color: black;
+    padding: 25px;
+}
+
+.grid-footer {
+    grid-area: footer;
+    background-color: #111111;
+    color: white;
+    padding: 20px;
+}
+.about-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "header header" "main main" "footer footer";
+}
+.about-hero{
+    grid-area: header;
+}
+.about-info{
+    grid-area : main;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas:"sidebar content";
+    gap: 40px;
+}
+.about-text{
+    grid-area: content;
+    width: auto;
+}
+.about-goals{
+    grid-area: sidebar;
+    width: auto;
+}
+.team-section{
+    grid-area:footer;
+}
+
+
+.gallery-section {
+    background-color: #111111;
+    color: white;
+    padding: 60px;
+}
+
+.gallery-section h2 {
+    font-size: 40px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+    object-position: center top;
+}
+
+.gallery-item p {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.gallery-item:hover p {
+    display: block;
 }
