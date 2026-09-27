@@ -32,6 +32,19 @@ body {
     padding: 20px 60px;
 }
 
+.navbar .nav-link{
+    color:white;
+}
+.navbar .nav-link:hover{
+    color: red;
+}
+.navbar-brand.logo{
+    color: white;
+}
+.navbar-brand.logo{
+    color: white;
+}
+
 .logo {
     color: white;
     font-size: 24px;
@@ -223,7 +236,6 @@ footer {
     justify-content: space-between;
     background-color: white;
     color: black;
-    padding: 60px;
 }
 
 .about-text,
@@ -296,7 +308,6 @@ footer {
 .program {
     background-color: white;
     color: black;
-    padding: 60px;
 }
 
 .program h2,
@@ -312,7 +323,7 @@ footer {
 }
 
 .card {
-    width: 27%;
+    width: 100%;
     background-color: #f2f2f2;
     padding: 25px;
     border-radius: 15px;
@@ -428,7 +439,6 @@ form button:hover {
     align-items: stretch;
 }
 
-.card,
 .feature-card,
 .team-card {
     flex: 1;
@@ -441,6 +451,15 @@ form button:hover {
 .team-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+.cards{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+    align-items: stretch;
+}
+card{
+    width: auto;
 }
 
 .card img {
@@ -538,4 +557,161 @@ form button:hover {
 
 .gallery-item:hover p {
     display: block;
+}
+/* Desktop */
+@media (min-width: 993px) {
+    h1 {
+        font-size: 55px;
+    }
+
+    h2 {
+        font-size: 40px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+    .navbar {
+        padding: 20px 30px;
+    }
+
+    .nav-links a {
+        margin: 0 10px;
+    }
+
+    .about-info {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .about-info {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "sidebar"
+            "content";
+        gap: 25px;
+    }
+
+    .team-members {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .team-card {
+        width: 100%;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    form {
+        width: 100%;
+    }
+}
+
+@media (max-width: 575px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .nav-links a {
+        margin: 0;
+    }
+
+    .hero {
+        padding: 20px;
+    }
+
+    .hero-text h1 {
+        font-size: 45px;
+    }
+
+    .hr-dr,
+    .about-description,
+    .description {
+        width: 100%;
+    }
+
+    .why-us {
+        flex-direction: column;
+        padding: 30px 20px;
+    }
+
+    .why-text,
+    .features {
+        width: 100%;
+    }
+
+    .features {
+        flex-direction: column;
+    }
+
+    .about-info {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "sidebar"
+            "content";
+        gap: 25px;
+        padding: 30px 20px;
+    }
+
+    .about-goals {
+        grid-area: sidebar;
+        width: 100%;
+    }
+
+    .about-text {
+        grid-area: content;
+        width: 100%;
+    }
+
+    .team-members {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .team-card {
+        width: 100%;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    .form-section {
+        padding: 30px 20px;
+    }
+
+    .training-photo img {
+        width: 100%;
+        height: auto;
+    }
 }
