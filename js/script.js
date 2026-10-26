@@ -1,4 +1,4 @@
-const registrationForm = document.getElementById("registrationForm");
+    const registrationForm = document.getElementById("registrationForm");
 
 if (registrationForm) {
     registrationForm.addEventListener("submit", function (event) {
@@ -69,21 +69,37 @@ if (subscribePopup) {
             "Email is valid. This is a demo form.";
     });
 }
+
+const theme = {
+    colors: ["#182535", "#283524", "#352438", "#0d0d0d"],
+    index: 0,
+
+    change: function() {
+    const color = this.colors[this.index];
+
+    document.body.style.backgroundColor = color;
+    document.querySelector(".navbar").style.backgroundColor = color;
+    document.querySelector("footer").style.backgroundColor = color;
+
+    localStorage.setItem("clubColor", color);
+
+    this.index++;
+
+    if (this.index === this.colors.length) {
+        this.index = 0;
+    }
+}
+};
+
 const changeColor = document.getElementById("changeColor");
-const colors = ["#182535", "#283524", "#352438", "#0d0d0d"];
-let colorIndex = 0;
 
 if (changeColor) {
-    changeColor.addEventListener("click", function () {
-        document.body.style.backgroundColor = colors[colorIndex];
-
-        colorIndex++;
-
-        if (colorIndex === colors.length) {
-            colorIndex = 0;
-        }
+    changeColor.addEventListener("click", function() {
+        theme.change();
+         playSound();
     });
 }
+
 const dateTime = document.getElementById("dateTime");
 
 if (dateTime) {
@@ -102,4 +118,101 @@ if (dateTime) {
 
     updateDateTime();
     setInterval(updateDateTime, 1000);
+}
+
+const links = document.querySelectorAll(".navbar-nav a");
+links.forEach(function(link,i){
+    link.addEventListener("keydown", function(e){
+        switch(e.key){
+            case "ArrowRight":
+                e.preventDefault();
+                links[(i+1)%links.length].focus();
+                break;
+            case "ArrowLeft":
+                e.preventDefault();
+                links[(i-1 + links.length)%links.length].focus();
+                break;
+        }
+    });
+});
+
+const step1=document.getElementById("step1");
+const step2=document.getElementById("step2");
+const nextBtn = document.getElementById("nextBtn");
+const backBtn = document.getElementById("backBtn");
+if (step1 && step2 && nextBtn && backBtn) {
+
+    function nextStep() {
+        step1.classList.add("d-none");
+        step2.classList.remove("d-none");
+    }
+
+    function backStep() {
+        step2.classList.add("d-none");
+        step1.classList.remove("d-none");
+    }
+
+    nextBtn.addEventListener("click", nextStep);
+    backBtn.addEventListener("click", backStep);
+}
+
+const trainings = [
+    {day: "Monday", name: "Strength Training", time: "18:00"},
+    {day: "Wednesday", name: "Technique Training", time: "18:00"},
+    {day: "Friday", name: "Practice Matches", time: "18:00"}
+];
+
+const trainingTable = document.getElementById("trainingTable");
+
+if (trainingTable) {
+    trainingTable.innerHTML = "";
+
+    for (let i = 0; i < trainings.length; i++) {
+        trainingTable.innerHTML += `
+            <tr>
+                <td>${trainings[i].day}</td>
+                <td>${trainings[i].name}</td>
+                <td>${trainings[i].time}</td>
+            </tr>
+        `;
+    }
+}
+let soundPlaying = false;
+
+function playSound() {
+    if (soundPlaying) return;
+
+    soundPlaying = true;
+
+    const audio = new AudioContext();
+    const sound = audio.createOscillator();
+    const volume = audio.createGain();
+
+    sound.frequency.value = 600;
+    volume.gain.value = 0.05;
+
+    sound.connect(volume);
+    volume.connect(audio.destination);
+
+    sound.start();
+    sound.stop(audio.currentTime + 0.1);
+
+    sound.onended = function() {
+        soundPlaying = false;
+        audio.close();
+    };
+}
+const readMoreBtn = document.getElementById("readMoreBtn");
+const moreInfo = document.getElementById("moreInfo");
+
+if (readMoreBtn && moreInfo) {
+    readMoreBtn.addEventListener("click", function() {
+        if (moreInfo.style.display === "block") {
+            moreInfo.style.display = "none";
+            readMoreBtn.textContent = "Read More";
+        } else {
+            moreInfo.style.display = "block";
+            readMoreBtn.textContent = "Read Less";
+        }
+    });
 }
