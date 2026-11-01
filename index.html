@@ -8,45 +8,43 @@
     <title>Kazaly Arm Club | Home</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
 </head>
 
 <body>
+    <div id="scrollProgress"></div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
 
     <nav class="navbar navbar-expand-lg navbar-dark px-3 px-lg-5">
 
-    <a class="navbar-brand logo" href="index.html">
-        💪 Kazaly ARM <span>CLUB</span>
-    </a>
+        <a class="navbar-brand logo" href="index.html">
+            💪 Kazaly ARM <span>CLUB</span>
+        </a>
 
-    <div class="d-flex align-items-center gap-2 ms-auto order-lg-3">
+        <div class="d-flex align-items-center gap-2 ms-auto order-lg-3">
 
-        <a class="join-button" href="join.html">JOIN NOW</a>
+            <a class="join-button" href="join.html">JOIN NOW</a>
 
-        <button class="navbar-toggler" type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#mainNavbar"
-            aria-controls="mainNavbar"
-            aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+                aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-    </div>
-
-    <div class="collapse navbar-collapse order-lg-2" id="mainNavbar">
-
-        <div class="navbar-nav ms-lg-auto align-items-lg-center">
-            <a class="nav-link" href="index.html">Home</a>
-            <a class="nav-link" href="about.html">About Us</a>
-            <a class="nav-link" href="training.html">Training</a>
-            <a class="nav-link" href="join.html">Join Us</a>
         </div>
 
-    </div>
+        <div class="collapse navbar-collapse order-lg-2" id="mainNavbar">
 
-</nav>
+            <div class="navbar-nav ms-lg-auto align-items-lg-center">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="about.html">About Us</a>
+                <a class="nav-link" href="training.html">Training</a>
+                <a class="nav-link" href="join.html">Join Us</a>
+            </div>
+
+        </div>
+
+    </nav>
 
     <main>
         <section class="hero">
@@ -115,6 +113,11 @@
     </main>
     <section class="faq-section">
         <h2>Frequently Asked Questions</h2>
+        <label for="faqSearch">Search questions:</label>
+
+        <input type="search" id="faqSearch" placeholder="Type a keyword...">
+        <div id="searchSuggestions"></div>
+        <p id="searchMessage" aria-live="polite"></p>
 
         <button type="button" class="faq-question" aria-expanded="false">
             Can beginners join the club?
@@ -174,6 +177,7 @@
         <p id="dateTime"></p>
     </footer>
     <script src="js/script.js"></script>
+
 
 </body>
 

@@ -802,3 +802,163 @@ body {
 #moreInfo {
     display: none;
 }
+
+#faqSearch {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    background-color: #222222;
+    color: white;
+    border: 1px solid #777777;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+#faqSearch::placeholder {
+    color: #bbbbbb;
+}
+
+#faqSearch:focus {
+    outline: 2px solid #ffcc00;
+}
+
+#searchMessage {
+    color: #ffcc00;
+}
+
+#searchSuggestions {
+    display: none;
+    background-color: #222222;
+    border: 1px solid #777777;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.suggestion-item {
+    display: block;
+    width: 100%;
+    padding: 12px 15px;
+    background-color: #222222;
+    color: white;
+    border: none;
+    border-bottom: 1px solid #444444;
+    text-align: left;
+    cursor: pointer;
+}
+
+.suggestion-item:hover,
+.suggestion-item:focus {
+    background-color: #444444;
+    color: #ffcc00;
+}
+.search-highlight {
+    background-color: #ffcc00;
+    color: #111111;
+    padding: 0 2px;
+    border-radius: 3px;
+}
+
+#scrollProgress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 6px;
+    background: linear-gradient(90deg, #ff0000, #ffcc00);
+    box-shadow: 0 0 10px #ff6600;
+    z-index: 9999;
+}
+.club-stats {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 40px 20px;
+    background-color: #191919;
+    text-align: center;
+}
+
+.club-stats .counter {
+    font-size: 50px;
+    font-weight: bold;
+    color: #ffcc00;
+}
+
+.club-stats p {
+    color: white;
+    font-size: 16px;
+}
+
+.submit-spinner {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border: 3px solid rgba(255, 255, 255, 0.4);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+button:disabled {
+    opacity: 0.7;
+    cursor: wait;
+}
+#toastMessage {
+    display: none;
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    max-width: calc(100vw - 50px);
+    padding: 18px 25px;
+    background-color: #222222;
+    color: white;
+    border-left: 5px solid #ffcc00;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    z-index: 9999;
+}
+.copy-box {
+    margin: 20px 0;
+}
+
+#copyButton {
+    background-color: #222222;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#copyButton:hover {
+    background-color: #444444;
+}
+
+#copyTooltip {
+    display: none;
+    margin-left: 10px;
+    padding: 6px 10px;
+    background-color: #ffcc00;
+    color: #111111;
+    border-radius: 5px;
+}
+.lazy-image {
+    background-color: #333333;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.lazy-image.loaded {
+    opacity: 1;
+}

@@ -1,49 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Team Members: Aibek Baimakhan & Magzhan Assankhan -->
     <title>Kazaly Arm Club | About Us</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
 </head>
+
 <body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <div id="scrollProgress"></div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
     <nav class="navbar navbar-expand-lg navbar-dark px-3 px-lg-5">
 
-    <a class="navbar-brand logo" href="index.html">
-        💪 Kazaly ARM <span>CLUB</span>
-    </a>
+        <a class="navbar-brand logo" href="index.html">
+            💪 Kazaly ARM <span>CLUB</span>
+        </a>
 
-    <div class="d-flex align-items-center gap-2 ms-auto order-lg-3">
+        <div class="d-flex align-items-center gap-2 ms-auto order-lg-3">
 
-        <a class="join-button" href="join.html">JOIN NOW</a>
+            <a class="join-button" href="join.html">JOIN NOW</a>
 
-        <button class="navbar-toggler" type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#mainNavbar"
-            aria-controls="mainNavbar"
-            aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+                aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-    </div>
-
-    <div class="collapse navbar-collapse order-lg-2" id="mainNavbar">
-
-        <div class="navbar-nav ms-lg-auto align-items-lg-center">
-            <a class="nav-link" href="index.html">Home</a>
-            <a class="nav-link" href="about.html">About Us</a>
-            <a class="nav-link" href="training.html">Training</a>
-            <a class="nav-link" href="join.html">Join Us</a>
         </div>
 
-    </div>
+        <div class="collapse navbar-collapse order-lg-2" id="mainNavbar">
 
-</nav>
+            <div class="navbar-nav ms-lg-auto align-items-lg-center">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="about.html">About Us</a>
+                <a class="nav-link" href="training.html">Training</a>
+                <a class="nav-link" href="join.html">Join Us</a>
+            </div>
+
+        </div>
+
+    </nav>
 
     <main class="about-grid">
 
@@ -64,62 +64,81 @@
 
         <section class="about-info py-4 py-md-5">
 
-           <div class="container px-sm-2 px-md-4">
-           <div class="row">
-            <div class ="about-goals col-sm-12 col-md-6 col-lg-6">
-                <h2>Our Goals</h2>
-                <ol>
-                   <li>Improve strength and endurance</li>
-                    <li>Learn proper arm wrestling techniques</li>
-                    <li>Develop discipline and confidence</li>
-                    <li>Create a strong student community</li>
-                    <li>Prepare members for competitions</li>
-                </ol>
+            <div class="container px-sm-2 px-md-4">
+                <div class="row">
+                    <div class="about-goals col-sm-12 col-md-6 col-lg-6">
+                        <h2>Our Goals</h2>
+                        <ol>
+                            <li>Improve strength and endurance</li>
+                            <li>Learn proper arm wrestling techniques</li>
+                            <li>Develop discipline and confidence</li>
+                            <li>Create a strong student community</li>
+                            <li>Prepare members for competitions</li>
+                        </ol>
+                    </div>
+                    <div class="about-text col-sm-12 col-md-6 col-lg-6">
+
+                        <h2>Who We Are</h2>
+
+                        <p>
+                            We are a student arm wrestling club where beginners and experienced students can train
+                            together,
+                            learn proper techniques and support each other.
+                        </p>
+                        <p id="moreInfo">
+                            At Kazaly Arm Club, everyone is welcome, even if you have
+                            never tried arm wrestling before.
+
+                            Our training includes strength exercises, arm wrestling
+                            techniques, grip training, and friendly practice matches.
+
+                            We focus on safe training, discipline, and teamwork.
+                            Members can improve their skills at their own pace
+                            and learn from each other.
+
+                            Training sessions take place every Monday, Wednesday,
+                            and Friday at 18:00.
+                        </p>
+
+                        <button type="button" id="readMoreBtn" class="btn btn-outline-danger">
+                            Read More
+                        </button>
+                    </div>
+                </div>
             </div>
-            <div class="about-text col-sm-12 col-md-6 col-lg-6">
-
-    <h2>Who We Are</h2>
-
-    <p>
-        We are a student arm wrestling club where beginners and experienced students can train together,
-        learn proper techniques and support each other.
-    </p>
-    <p id="moreInfo">
-    At Kazaly Arm Club, everyone is welcome, even if you have
-    never tried arm wrestling before.
-
-    Our training includes strength exercises, arm wrestling
-    techniques, grip training, and friendly practice matches.
-
-    We focus on safe training, discipline, and teamwork.
-    Members can improve their skills at their own pace
-    and learn from each other.
-
-    Training sessions take place every Monday, Wednesday,
-    and Friday at 18:00.
-</p>
-
-<button type="button" id="readMoreBtn" class="btn btn-outline-danger">
-    Read More
-</button>
-            </div>
-           </div>
-        </div>
 
         </section>
 
 
         <section class="team-section">
 
+
             <p class="team-label">KAZALY ARM CLUB</p>
 
             <h2>Our Athletes</h2>
 
+            <div class="club-stats">
+                <div>
+                    <h2 class="counter" data-target="3">0</h2>
+                    <p>Training Days per Week</p>
+                </div>
+
+                <div>
+                    <h2 class="counter" data-target="2">0</h2>
+                    <p>Featured Athletes</p>
+                </div>
+
+                <div>
+                    <h2 class="counter" data-target="9">0</h2>
+                    <p>Gallery Photos</p>
+                </div>
+            </div>
             <div class="team-members">
 
                 <div class="team-card">
 
-                    <img src="images/armfoto1.jpg" alt="Magzhan Assankhan">
+                    <img class="lazy-image" data-src="images/armfoto1.jpg" alt="Magzhan Assankhan" width="160"
+                        height="160">
 
                     <h3>Magzhan Assankhan</h3>
 
@@ -135,8 +154,8 @@
 
                 <div class="team-card">
 
-                    <img src="images/armfoto2.jpg" alt="Aibek Baimakhan">
-
+                    <img class="lazy-image" data-src="images/armfoto2.jpg" alt="Aibek Baimakhan" width="160"
+                        height="160">
                     <h3>Aibek Baimakhan</h3>
 
                     <p>
@@ -153,7 +172,7 @@
         </section>
 
     </main>
-     <div id="subscribePopup" class="popup">
+    <div id="subscribePopup" class="popup">
         <div class="popup-content">
             <button type="button" id="closePopup" class="btn btn-secondary">
                 Close
@@ -189,4 +208,5 @@
     <script src="js/script.js"></script>
 
 </body>
+
 </html>

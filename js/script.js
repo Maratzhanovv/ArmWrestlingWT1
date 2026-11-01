@@ -1,4 +1,4 @@
-    const registrationForm = document.getElementById("registrationForm");
+const registrationForm = document.getElementById("registrationForm");
 
 if (registrationForm) {
     registrationForm.addEventListener("submit", function (event) {
@@ -14,7 +14,7 @@ if (registrationForm) {
 
         if (name === "" || email.value.trim() === "" ||
             password === "" || confirmPassword === "") {
-            formMessage.textContent = "Please fill in all required fields.";
+            formMessage.textContent = "Please fill in srequired fields.";
         } else if (!email.checkValidity()) {
             formMessage.textContent = "Please enter a valid email address.";
         } else if (password.length < 8) {
@@ -22,8 +22,35 @@ if (registrationForm) {
         } else if (password !== confirmPassword) {
             formMessage.textContent = "Passwords do not match.";
         } else {
-            formMessage.style.color = "green";
-            formMessage.textContent = "All fields are valid.";
+            const submitButton = $("#registrationForm button[type='submit']");
+
+            if (submitButton.prop("disabled")) {
+                return;
+            }
+
+            const originalText = submitButton.html();
+
+            formMessage.textContent = "";
+
+            submitButton.prop("disabled", true);
+
+            submitButton.html(
+                '<span class="submit-spinner"></span>Please wait…'
+            );
+
+            setTimeout(function () {
+                submitButton.prop("disabled", false);
+                submitButton.html(originalText);
+
+                formMessage.style.color = "green";
+                formMessage.textContent = "Demo completed. No data was sent.";
+                $("#toastMessage")
+                    .stop(true, true)
+                    .text("Your activity completed successfully.Data was sent.")
+                    .fadeIn(300)
+                    .delay(3000)
+                    .fadeOut(500);
+            }, 2000);
         }
     });
 }
@@ -74,29 +101,29 @@ const theme = {
     colors: ["#182535", "#283524", "#352438", "#0d0d0d"],
     index: 0,
 
-    change: function() {
-    const color = this.colors[this.index];
+    change: function () {
+        const color = this.colors[this.index];
 
-    document.body.style.backgroundColor = color;
-    document.querySelector(".navbar").style.backgroundColor = color;
-    document.querySelector("footer").style.backgroundColor = color;
+        document.body.style.backgroundColor = color;
+        document.querySelector(".navbar").style.backgroundColor = color;
+        document.querySelector("footer").style.backgroundColor = color;
 
-    localStorage.setItem("clubColor", color);
+        localStorage.setItem("clubColor", color);
 
-    this.index++;
+        this.index++;
 
-    if (this.index === this.colors.length) {
-        this.index = 0;
+        if (this.index === this.colors.length) {
+            this.index = 0;
+        }
     }
-}
 };
 
 const changeColor = document.getElementById("changeColor");
 
 if (changeColor) {
-    changeColor.addEventListener("click", function() {
+    changeColor.addEventListener("click", function () {
         theme.change();
-         playSound();
+        playSound();
     });
 }
 
@@ -121,23 +148,23 @@ if (dateTime) {
 }
 
 const links = document.querySelectorAll(".navbar-nav a");
-links.forEach(function(link,i){
-    link.addEventListener("keydown", function(e){
-        switch(e.key){
+links.forEach(function (link, i) {
+    link.addEventListener("keydown", function (e) {
+        switch (e.key) {
             case "ArrowRight":
                 e.preventDefault();
-                links[(i+1)%links.length].focus();
+                links[(i + 1) % links.length].focus();
                 break;
             case "ArrowLeft":
                 e.preventDefault();
-                links[(i-1 + links.length)%links.length].focus();
+                links[(i - 1 + links.length) % links.length].focus();
                 break;
         }
     });
 });
 
-const step1=document.getElementById("step1");
-const step2=document.getElementById("step2");
+const step1 = document.getElementById("step1");
+const step2 = document.getElementById("step2");
 const nextBtn = document.getElementById("nextBtn");
 const backBtn = document.getElementById("backBtn");
 if (step1 && step2 && nextBtn && backBtn) {
@@ -157,9 +184,9 @@ if (step1 && step2 && nextBtn && backBtn) {
 }
 
 const trainings = [
-    {day: "Monday", name: "Strength Training", time: "18:00"},
-    {day: "Wednesday", name: "Technique Training", time: "18:00"},
-    {day: "Friday", name: "Practice Matches", time: "18:00"}
+    { day: "Monday", name: "Strength Training", time: "18:00" },
+    { day: "Wednesday", name: "Technique Training", time: "18:00" },
+    { day: "Friday", name: "Practice Matches", time: "18:00" }
 ];
 
 const trainingTable = document.getElementById("trainingTable");
@@ -197,7 +224,7 @@ function playSound() {
     sound.start();
     sound.stop(audio.currentTime + 0.1);
 
-    sound.onended = function() {
+    sound.onended = function () {
         soundPlaying = false;
         audio.close();
     };
@@ -206,7 +233,7 @@ const readMoreBtn = document.getElementById("readMoreBtn");
 const moreInfo = document.getElementById("moreInfo");
 
 if (readMoreBtn && moreInfo) {
-    readMoreBtn.addEventListener("click", function() {
+    readMoreBtn.addEventListener("click", function () {
         if (moreInfo.style.display === "block") {
             moreInfo.style.display = "none";
             readMoreBtn.textContent = "Read More";
@@ -216,3 +243,224 @@ if (readMoreBtn && moreInfo) {
         }
     });
 }
+
+$(document).ready(function () {
+    console.log("jQuery is ready!");
+
+    $(".faq-question, .faq-answer p").each(function () {
+        $(this).data("originalText", $(this).text().trim());
+    });
+
+    function escapeHtml(text) {
+        return $("<div>").text(text).html();
+    }
+
+    function highlightText(text, keyword) {
+        if (keyword === "") {
+            return escapeHtml(text);
+        }
+
+        const lowerText = text.toLowerCase();
+        let result = "";
+        let start = 0;
+        let position = lowerText.indexOf(keyword, start);
+
+        while (position !== -1) {
+            result += escapeHtml(text.slice(start, position));
+
+            result += '<mark class="search-highlight">';
+            result += escapeHtml(
+                text.slice(position, position + keyword.length)
+            );
+            result += "</mark>";
+
+            start = position + keyword.length;
+            position = lowerText.indexOf(keyword, start);
+        }
+
+        result += escapeHtml(text.slice(start));
+
+        return result;
+    }
+
+    $("#faqSearch").on("input", function () {
+        const keyword = $(this).val().toLowerCase().trim();
+        let found = 0;
+
+        $("#searchSuggestions").empty().hide();
+
+        $(".faq-question").each(function () {
+            const question = $(this);
+            const answer = question.next(".faq-answer");
+            const questionText = question.data("originalText");
+
+            const text = (
+                questionText + " " + answer.text()
+            ).toLowerCase();
+
+            question.html(highlightText(questionText, keyword));
+
+            answer.find("p").each(function () {
+                const originalText = $(this).data("originalText");
+                $(this).html(highlightText(originalText, keyword));
+            });
+
+            if (text.includes(keyword)) {
+                question.show();
+                answer.show();
+                found++;
+
+                if (keyword !== "") {
+                    question.attr("aria-expanded", "true");
+                    answer.css("max-height", answer[0].scrollHeight + "px");
+
+                    const suggestion = $("<button></button>");
+
+                    suggestion.attr("type", "button");
+                    suggestion.addClass("suggestion-item");
+                    suggestion.text(questionText);
+
+                    $("#searchSuggestions").append(suggestion);
+                } else {
+                    question.attr("aria-expanded", "false");
+                    answer.css("max-height", "0px");
+                }
+            } else {
+                question.hide();
+                answer.hide();
+                question.attr("aria-expanded", "false");
+                answer.css("max-height", "0px");
+            }
+        });
+
+        if (found === 0) {
+            $("#searchMessage").text("No questions found.");
+        } else {
+            $("#searchMessage").text("");
+        }
+
+        if (keyword !== "" && found > 0) {
+            $("#searchSuggestions").show();
+        }
+    });
+
+    $("#searchSuggestions").on("click", ".suggestion-item", function () {
+        const selectedText = $(this).text();
+
+        $("#faqSearch").val(selectedText).trigger("input");
+        $("#searchSuggestions").hide();
+        $("#faqSearch").trigger("focus");
+    });
+
+    $(document).on("click", function (event) {
+        if (!$(event.target).closest("#faqSearch, #searchSuggestions").length) {
+            $("#searchSuggestions").hide();
+        }
+    });
+    $("#copyButton").on("click", async function () {
+        const button = $(this);
+        const text = $("#trainingTime").text().trim();
+
+        button.prop("disabled", true);
+
+        try {
+            await navigator.clipboard.writeText(text);
+
+            button.text("✓ Copied");
+
+            $("#copyTooltip")
+                .text("Copied to clipboard!")
+                .show();
+        } catch (error) {
+            $("#copyTooltip")
+                .text("Could not copy. Please copy the text manually.")
+                .show();
+        }
+
+        setTimeout(function () {
+            button.text("Copy");
+            button.prop("disabled", false);
+            $("#copyTooltip").hide();
+        }, 2500);
+
+    });
+    function loadVisibleImages() {
+        const windowTop = $(window).scrollTop();
+        const windowBottom = windowTop + $(window).height();
+
+        $(".lazy-image[data-src]").each(function () {
+            const image = $(this);
+            const imageTop = image.offset().top;
+            const imageBottom = imageTop + image.outerHeight();
+
+            if (
+                image.is(":visible") &&
+                imageTop < windowBottom &&
+                imageBottom > windowTop
+            ) {
+                image.one("load", function () {
+                    image.addClass("loaded");
+                });
+
+                image.attr("src", image.attr("data-src"));
+                image.removeAttr("data-src");
+            }
+        });
+    }
+
+    $(window).on("scroll resize load", loadVisibleImages);
+
+    loadVisibleImages();
+});
+function updateScrollProgress() {
+    const scrollTop = $(window).scrollTop();
+    const pageHeight = $(document).height() - $(window).height();
+
+    const progress = pageHeight > 0
+        ? (scrollTop / pageHeight) * 100
+        : 100;
+
+    $("#scrollProgress").css("width", progress + "%");
+}
+
+$(window).on("scroll resize", updateScrollProgress);
+
+updateScrollProgress();
+
+function animateCounters() {
+    $(".counter").each(function () {
+        const counter = $(this);
+        const windowTop = $(window).scrollTop();
+        const windowBottom = windowTop + $(window).height();
+        const counterTop = counter.offset().top;
+        const counterBottom = counterTop + counter.outerHeight();
+
+        if (
+            counterTop < windowBottom &&
+            counterBottom > windowTop &&
+            !counter.data("started")
+        ) {
+            counter.data("started", true);
+
+            const target = Number(counter.attr("data-target"));
+
+            $({ value: 0 }).animate(
+                { value: target },
+                {
+                    duration: 2000,
+                    step: function (value) {
+                        counter.text(Math.floor(value));
+                    },
+                    complete: function () {
+                        counter.text(target);
+                    }
+                }
+            );
+        }
+
+    });
+}
+
+$(window).on("scroll resize", animateCounters);
+
+animateCounters();
