@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Kazaly Arm Club. A student community built around strength, technique and discipline.">
+    <title>Member profile | Kazaly Arm Club</title>
+    <link rel="icon" href="images/arm-icon.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/theme.js">
+    </script>
+    <script defer src="js/script.js">
+    </script>
+</head>
+
+<body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+        <div class="nav-wrap wrap">
+            <a class="brand" href="index.html">
+                <span class="brand-mark">K/A</span>
+                <span>KAZALY <b>ARM CLUB</b>
+                </span>
+            </a>
+            <button class="menu-toggle secondary" aria-expanded="false" aria-controls="navigation">Menu</button>
+            <nav id="navigation" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html">Our club</a>
+                <a href="training.html">Training</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+                <a class="mobile-account" href="join.html">Join the club</a>
+                <a class="mobile-account" href="login.html">Log in</a>
+            </nav>
+            <div class="nav-actions">
+                <button id="themeToggle" class="theme-toggle" aria-label="Switch color theme">◐</button>
+                <a href="login.html" class="account-link">Log in</a>
+                <a href="join.html" class="button small">Join the club <span aria-hidden="true">↗</span>
+                </a>
+            </div>
+        </div>
+    </header>
+    <main id="main">
+        <section class="page-intro wrap">
+            <p class="eyebrow">MEMBERSHIP / YOUR SPACE</p>
+            <h1>YOUR CLUB.<br>
+                <em>YOUR PROGRESS.</em>
+            </h1>
+            <p class="lead">Your member details and saved sessions, together in one place.</p>
+        </section>
+        <section class="wrap section" id="profileContent">
+            <div class="form-card">
+                <h2>Your member space</h2>
+                <p>Log in to view your profile and saved sessions.</p>
+                <a class="button" href="login.html">Log in ↗</a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="wrap footer-grid">
+            <div>
+                <a class="brand" href="index.html">
+                    <span class="brand-mark">K/A</span>
+                    <span>KAZALY <b>ARM CLUB</b>
+                    </span>
+                </a>
+                <p>Strength. Technique. Discipline.<br>A stronger community, one session at a time.</p>
+            </div>
+            <div>
+                <p class="eyebrow">Explore</p>
+                <a href="training.html">Training schedule</a>
+                <a href="gallery.html">Club gallery</a>
+                <a href="contact.html">Get in touch</a>
+            </div>
+            <div>
+                <p class="eyebrow">Stay in the loop</p>
+                <form id="newsletterForm" novalidate>
+                    <div class="field">
+                        <label for="newsletterEmail">Email address</label>
+                        <input id="newsletterEmail" name="newsletterEmail" type="text" autocomplete="email"
+                            aria-describedby="newsletterEmail-error" placeholder="you@example.com">
+                        <small class="error" id="newsletterEmail-error">
+                        </small>
+                    </div>
+                    <button class="secondary" type="submit">Save subscription ↗</button>
+                    <p class="form-status" role="status">
+                    </p>
+                </form>
+                <small>Demo subscription saved on this device. No emails are sent.</small>
+            </div>
+        </div>
+        <div class="wrap footer-bottom">
+            <span>© 2026 Kazaly Arm Club</span>
+            <span>Aibek Baimakhan &amp; Magzhan Assankhan</span>
+            <a href="profile.html">Member profile ↗</a>
+        </div>
+    </footer>
+    <div id="toast" role="status">
+    </div>
+</body>
+
+</html>
